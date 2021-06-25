@@ -1,0 +1,16 @@
+<div class="layout">
+  <app-header></app-header>
+  <section class="login container">
+    <div class="layout__logo">
+      <img [src]="logo"/>
+    </div>
+    <div class="layout__content">
+      <ng-container *ngIf="formSuccess; else component">
+        <app-thk-module></app-thk-module>
+      </ng-container>
+      <ng-template #component>
+        <app-tabs-login (submitValid)="success()"></app-tabs-login>
+      </ng-template>
+    </div>
+  </section>
+</div>

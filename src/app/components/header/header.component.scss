@@ -1,0 +1,120 @@
+@import '../../../scss/index';
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  min-height: 60px;
+  z-index: 6;
+
+  .menu-toggle {
+    padding: 1em;
+    position: absolute;
+    right: 0.5em;
+    top: 1em;
+
+    .hamburger, .hamburger:before {
+      content: '';
+      display: block;
+      background: $color-white;
+      height: 2px;
+      width: 1.8em;
+      border-radius: 3px;
+      transition: 0.3s ease-in-out;
+    }
+    .hamburger{
+      &:before {
+        transform: translate(0, -7px);
+      }
+    }
+    &.open{
+      .hamburger{
+        transform: rotate(45deg);
+        &:before{
+          transform: translateY(0) rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  &.menu-open {
+    height: 100%;
+    background-image: url(/assets/img/bg.png);
+    @include background(center, no-repeat, 100%);
+  }
+
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    clip-path: circle(0px at top right);
+    width: 100%;
+    display: block;
+
+    &--open {
+      clip-path: circle(200% at top right);
+      max-width: 500px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      text-align: center;
+      @media (max-width: 600px) {
+        text-align: left;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 40px;
+      list-style: none;
+
+      li {
+        color: $color-white-clean;
+        display: block;
+
+        a {
+          color: $color-gray-clean;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 700;
+          font-family: 'Dosis', sans-serif;
+          width: 100%;
+          position: relative;
+          display: block;
+          padding: 1em;
+
+          &:focus {
+            color: $color-white;
+
+            &:before {
+              content: "";
+              width: 30px;
+              height: 2px;
+              background-color: $color-blue-clear;
+              display: block;
+              position: absolute;
+              left: -30px;
+              top: 28px;
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .layout {
+    &__logo {
+      text-align: center;
+      margin: 2rem 0;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../../scss/index';
+
+.layout {
+  background-image: url('/assets/img/bg.png');
+  @include background(center, no-repeat, cover);
+  min-height: 100vh;
+  padding: 2rem 0;
+
+  &__logo {
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    padding: 0 0.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,16 @@
+<header class="header" [ngClass]="classMenuOpen || ''">
+  <div class="menu-toggle" [ngClass]="classMenuBtn || ''" (click)="menu()">
+    <div class="hamburger"></div>
+  </div>
+  <nav class="site-nav" [ngClass]="classMenuItems || ''">
+    <div class="layout__logo">
+      <img [src]="logo"/>
+    </div>
+    <ul *ngIf="items?.length > 0">
+      <li *ngFor="let item of items">
+        <a [routerLink]="item?.link">{{item?.label}}</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+

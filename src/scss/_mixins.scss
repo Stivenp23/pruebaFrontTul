@@ -1,0 +1,14 @@
+@mixin background($position, $repeat, $size) {
+  background-position: $position;
+  background-repeat: $repeat;
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+@mixin display-align($display, $justify-content, $align-items) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
